@@ -136,27 +136,46 @@ const counters = document.querySelectorAll('.counter');
 const speed = 200;
 
 counters.forEach(counter => {
+    const suffix = counter.parentElement.innerText.includes('%') ? '%' : 
+                   (counter.parentElement.innerText.includes('+') ? '+' : '');
+
     const updateCount = () => {
         const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText.replace('+', '').replace('%', '');
+        const count = +counter.innerText;
         const inc = target / speed;
 
         if (count < target) {
-            counter.innerText = Math.ceil(count + inc) + (counter.innerText.includes('%') ? '%' : '+');
+            counter.innerText = Math.ceil(count + inc);
             setTimeout(updateCount, 1);
         } else {
-            counter.innerText = target + (counter.innerText.includes('%') ? '%' : '+');
+            counter.innerText = target;
         }
     };
 
-    // Trigger when scrolled into view (using AOS or Intersection Observer)
+    // Trigger when scrolled into view
     const observer = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting) {
-            // Need to set data-target first
             const val = parseInt(counter.innerText);
             counter.setAttribute('data-target', val);
             counter.innerText = '0';
-            updateCount();
+            
+            // Re-apply suffix after animation if needed, or handle it in updateCount
+            // Let's modify updateCount to be cleaner
+            const updateWithSuffix = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = parseInt(counter.innerText);
+                const inc = target / speed;
+
+                if (count < target) {
+                    const nextCount = Math.ceil(count + inc);
+                    counter.innerText = nextCount + suffix;
+                    setTimeout(updateWithSuffix, 1);
+                } else {
+                    counter.innerText = target + suffix;
+                }
+            };
+            
+            updateWithSuffix();
             observer.unobserve(counter);
         }
     });
