@@ -249,10 +249,10 @@ nav.scrolled {
 
 .hero-img {
     position: absolute;
-    right: 5%;
+    right: 2%;
     top: 55%;
     transform: translateY(-50%);
-    width: 45%;
+    width: 25%;
     z-index: 2;
     animation: float 6s ease-in-out infinite;
 }
