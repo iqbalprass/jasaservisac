@@ -1,3 +1,9 @@
+// Force scroll to top on refresh
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
 // Preloader
 window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
@@ -136,8 +142,8 @@ const counters = document.querySelectorAll('.counter');
 const speed = 200;
 
 counters.forEach(counter => {
-    const suffix = counter.parentElement.innerText.includes('%') ? '%' : 
-                   (counter.parentElement.innerText.includes('+') ? '+' : '');
+    const suffix = counter.parentElement.innerText.includes('%') ? '%' :
+        (counter.parentElement.innerText.includes('+') ? '+' : '');
 
     const updateCount = () => {
         const target = +counter.getAttribute('data-target');
@@ -158,7 +164,7 @@ counters.forEach(counter => {
             const val = parseInt(counter.innerText);
             counter.setAttribute('data-target', val);
             counter.innerText = '0';
-            
+
             // Re-apply suffix after animation if needed, or handle it in updateCount
             // Let's modify updateCount to be cleaner
             const updateWithSuffix = () => {
@@ -174,7 +180,7 @@ counters.forEach(counter => {
                     counter.innerText = target + suffix;
                 }
             };
-            
+
             updateWithSuffix();
             observer.unobserve(counter);
         }
