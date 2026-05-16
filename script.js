@@ -174,10 +174,10 @@ counters.forEach(counter => {
 
                 if (count < target) {
                     const nextCount = Math.ceil(count + inc);
-                    counter.innerText = nextCount + suffix;
+                    counter.innerText = nextCount;
                     setTimeout(updateWithSuffix, 1);
                 } else {
-                    counter.innerText = target + suffix;
+                    counter.innerText = target;
                 }
             };
 
