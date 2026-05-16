@@ -95,7 +95,7 @@ particlesJS("particles-js", {
         "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
     },
     "interactivity": {
-        "detect_on": "canvas",
+        "detect_on": "window",
         "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
         "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
     },
