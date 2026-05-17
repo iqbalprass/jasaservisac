@@ -124,6 +124,38 @@ AOS.init({
 });
 
 // Swiper.js Config
+// Load local reviews from localStorage
+const localReviews = JSON.parse(localStorage.getItem('userReviews')) || [];
+const swiperWrapper = document.querySelector('.mySwiper .swiper-wrapper');
+
+if (swiperWrapper) {
+    localReviews.forEach(review => {
+        const ratingHtml = Array(5).fill(0).map((_, i) => {
+            return i < review.ratingNum ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>';
+        }).join('');
+
+        const slideHtml = `
+            <div class="swiper-slide">
+                <div class="testimonial-card glass">
+                    <div class="rating">
+                        ${ratingHtml}
+                    </div>
+                    <p>"${review.text}"</p>
+                    <div class="customer-info">
+                        <div class="customer-img" style="background-color: var(--primary); display:flex; justify-content:center; align-items:center; color:#000; font-weight:bold; font-size: 1.2rem;">
+                            ${review.name.charAt(0).toUpperCase()}
+                        </div>
+                        <div>
+                            <h4>${review.name}</h4>
+                            <p>Pelanggan AC-SEJUK</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        swiperWrapper.insertAdjacentHTML('afterbegin', slideHtml); // Add to the beginning so it shows up first
+    });
+}
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
     spaceBetween: 30,
@@ -342,7 +374,52 @@ if (reviewForm) {
             });
 
             if (response.ok) {
-                alert("Terima kasih atas ulasan Anda! Ulasan Anda akan kami tinjau.");
+                // Save to localStorage so it persists
+                const reviewerName = formData.get('reviewer_name');
+                const reviewText = formData.get('review_text');
+                const ratingValue = formData.get('rating');
+                let ratingNum = 5;
+                if(ratingValue === 'Puas') ratingNum = 4;
+                else if(ratingValue === 'Cukup') ratingNum = 3;
+                else if(ratingValue === 'Kurang') ratingNum = 2;
+                else if(ratingValue === 'Sangat Kurang') ratingNum = 1;
+
+                const newReview = { name: reviewerName, text: reviewText, ratingNum: ratingNum };
+                const savedReviews = JSON.parse(localStorage.getItem('userReviews')) || [];
+                savedReviews.push(newReview);
+                localStorage.setItem('userReviews', JSON.stringify(savedReviews));
+
+                // Append dynamically to Swiper
+                const ratingHtml = Array(5).fill(0).map((_, i) => {
+                    return i < ratingNum ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>';
+                }).join('');
+
+                const slideHtml = `
+                    <div class="swiper-slide">
+                        <div class="testimonial-card glass">
+                            <div class="rating">
+                                ${ratingHtml}
+                            </div>
+                            <p>"${reviewText}"</p>
+                            <div class="customer-info">
+                                <div class="customer-img" style="background-color: var(--primary); display:flex; justify-content:center; align-items:center; color:#000; font-weight:bold; font-size: 1.2rem;">
+                                    ${reviewerName.charAt(0).toUpperCase()}
+                                </div>
+                                <div>
+                                    <h4>${reviewerName}</h4>
+                                    <p>Pelanggan AC-SEJUK</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                if (typeof swiper !== 'undefined') {
+                    swiper.prependSlide(slideHtml);
+                    swiper.update();
+                }
+
+                alert("Terima kasih atas ulasan Anda! Ulasan Anda telah ditampilkan.");
                 reviewForm.reset();
                 closeReviewModal();
             } else {
