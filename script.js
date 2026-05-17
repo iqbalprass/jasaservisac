@@ -6,6 +6,12 @@ window.scrollTo(0, 0);
 
 // Preloader
 window.addEventListener('load', () => {
+    // Check if user has ordered before to show review button
+    if (localStorage.getItem('hasOrdered') === 'true') {
+        const reviewBtn = document.getElementById('btn-berikan-ulasan');
+        if(reviewBtn) reviewBtn.style.display = 'inline-block';
+    }
+
     const preloader = document.getElementById('preloader');
     setTimeout(() => {
         preloader.style.opacity = '0';
@@ -227,6 +233,11 @@ form.addEventListener('submit', async (e) => {
         });
 
         if (response.ok) {
+            // Set localStorage to remember user has ordered
+            localStorage.setItem('hasOrdered', 'true');
+            const reviewBtn = document.getElementById('btn-berikan-ulasan');
+            if(reviewBtn) reviewBtn.style.display = 'inline-block';
+            
             showSuccess();
             form.reset();
         } else {
@@ -287,3 +298,61 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+// Review Modal Functions
+function openReviewModal() {
+    const modal = document.getElementById('review-modal');
+    modal.style.display = 'flex';
+    setTimeout(() => {
+        modal.style.opacity = '1';
+    }, 10);
+}
+
+function closeReviewModal() {
+    const modal = document.getElementById('review-modal');
+    modal.style.opacity = '0';
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 300);
+}
+
+// Review Form Submission
+const reviewForm = document.getElementById('review-form');
+if (reviewForm) {
+    reviewForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const btn = reviewForm.querySelector('button');
+        const originalText = btn.innerText;
+
+        const endpoint = "https://formspree.io/f/xrejwjrv"; // Menggunakan endpoint form yang sama
+        const formData = new FormData(reviewForm);
+        formData.append('_subject', 'Ulasan Baru dari Pelanggan AC-SEJUK');
+
+        btn.innerText = "Mengirim...";
+        btn.disabled = true;
+
+        try {
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                alert("Terima kasih atas ulasan Anda! Ulasan Anda akan kami tinjau.");
+                reviewForm.reset();
+                closeReviewModal();
+            } else {
+                alert("Oops! Terjadi kesalahan saat mengirim ulasan. Silakan coba lagi.");
+            }
+        } catch (error) {
+            alert("Gagal terhubung ke server.");
+        } finally {
+            btn.innerText = originalText;
+            btn.disabled = false;
+        }
+    });
+}
