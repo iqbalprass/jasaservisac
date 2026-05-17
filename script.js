@@ -137,6 +137,19 @@ var swiper = new Swiper(".mySwiper", {
     }
 });
 
+var gallerySwiper = new Swiper(".gallerySwiper", {
+    slidesPerView: 1,
+    loop: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".gallery-pagination",
+        clickable: true,
+    }
+});
+
 // Counter Animation
 const counters = document.querySelectorAll('.counter');
 const speed = 200;
