@@ -594,33 +594,49 @@ nav.scrolled {
 
 @media (max-width: 768px) {
     .nav-links { display: none; } /* Add hamburger logic in JS/HTML */
+    
+    /* Memaksa semua tulisan berada di tengah pada HP */
+    section, footer, .hero-content, .service-card, .pricing-card, .testimonial-card {
+        text-align: center !important;
+    }
+    
     .hero-content h1 { font-size: 2.5rem; }
     
-    /* Penyesuaian agar teks pas di tengah pada HP */
+    /* Tombol Pesan dan Konsultasi disejajarkan kiri-kanan */
     .hero-btns { 
-        flex-direction: column; 
-        align-items: center; 
+        flex-direction: row; 
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
     }
     .hero-btns .btn {
-        width: 100%;
+        width: 50%;
         text-align: center;
+        padding: 12px 10px;
+        font-size: 0.85rem;
     }
-    .booking-info {
-        text-align: center;
-    }
+    
     .customer-info {
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         text-align: center;
         gap: 10px;
     }
+    
     footer > div > div {
         text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+    
     footer > div > div > div {
         justify-content: center !important;
+    }
+    
+    /* Pengecualian agar form pemesanan tetap rapi dan mudah diisi */
+    .form-group {
+        text-align: left !important;
     }
 }
