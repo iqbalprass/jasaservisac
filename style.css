@@ -718,26 +718,25 @@ nav.scrolled {
     /* Memastikan gambar hero dan bagian awal pas 1 layar (100vh) */
     .hero {
         height: 100vh !important;
-        padding-top: 90px !important;
-        padding-bottom: 30px !important;
-        justify-content: center !important;
-        /* Memusatkan semua konten di tengah layar */
+        padding-top: 80px !important;
+        padding-bottom: 20px !important;
+        justify-content: flex-start !important;
+        /* Tulisan di atas, gambar mengikuti di bawahnya */
     }
 
     .hero-image {
         width: 100% !important;
-        max-height: 45vh !important;
-        margin-top: 30px !important;
-        /* Memberi jarak antara teks dan gambar */
+        max-height: 50vh !important;
+        margin-top: 15px !important;
         display: flex !important;
         align-items: center !important;
-        /* Gambar berada di tengah kotak */
         justify-content: center !important;
+        flex: 1 !important;
     }
 
     .hero-image img {
-        max-width: 90% !important;
-        max-height: 40vh !important;
+        max-width: 95% !important;
+        max-height: 48vh !important;
         object-fit: contain !important;
     }
 
@@ -777,12 +776,12 @@ nav.scrolled {
     }
 
     .gallery-img {
-        /* Jika browser tidak mendukung aspect-ratio, fallback ke tinggi tetap */
-        height: 200px !important;
-        aspect-ratio: 16 / 9 !important;
-        object-fit: contain !important;
-        background-color: rgba(0, 0, 0, 0.5);
-        border-radius: 15px;
+        width: 100% !important;
+        height: 220px !important;
+        aspect-ratio: auto !important;
+        object-fit: cover !important;
+        background-color: transparent !important;
+        border-radius: 10px;
     }
 
     /* Tombol Pesan dan Konsultasi disejajarkan kiri-kanan */
