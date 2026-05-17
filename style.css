@@ -717,7 +717,8 @@ nav.scrolled {
 
     /* Memastikan gambar hero dan bagian awal pas 1 layar (100vh) */
     .hero {
-        height: 100vh !important;
+        min-height: 100vh !important;
+        height: auto !important;
         padding-top: 80px !important;
         padding-bottom: 20px !important;
         justify-content: flex-start !important;
