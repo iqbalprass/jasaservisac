@@ -40,7 +40,8 @@
             <a href="#testimonials">Testimoni</a>
             <a href="#contact">Kontak</a>
         </div>
-        <a href="https://wa.me/6287854237048" target="_blank" class="btn btn-primary" style="padding: 10px 25px;">Hubungi Kami</a>
+        <a href="https://wa.me/6287854237048" target="_blank" class="btn btn-primary"
+            style="padding: 10px 25px;">Hubungi Kami</a>
     </nav>
 
     <!-- Hero Section -->
@@ -161,7 +162,8 @@
                     <li><i class="fas fa-check"></i> Laporan Bulanan</li>
                     <li><i class="fas fa-check"></i> Prioritas Utama</li>
                 </ul>
-                <a href="https://wa.me/6287854237048?text=Halo%20AC-SEJUK,%20saya%20tertarik%20dengan%20Paket%20Corporate%20(Custom).%20Saya%20ingin%20konsultasi%20mengenai%20fitur:%20Maintenance%20Kontrak,%20Unit%20Tak%20Terbatas,%20Laporan%20Bulanan,%20dan%20Prioritas%20Utama.%20Bisa%20minta%20info%20lebih%20lanjut?" class="btn btn-outline" target="_blank">Hubungi Kami</a>
+                <a href="https://wa.me/6287854237048?text=Halo%20AC-SEJUK,%20saya%20tertarik%20dengan%20Paket%20Corporate%20(Custom).%20Saya%20ingin%20konsultasi%20mengenai%20fitur:%20Maintenance%20Kontrak,%20Unit%20Tak%20Terbatas,%20Laporan%20Bulanan,%20dan%20Prioritas%20Utama.%20Bisa%20minta%20info%20lebih%20lanjut?"
+                    class="btn btn-outline" target="_blank">Hubungi Kami</a>
             </div>
         </div>
     </section>
@@ -171,7 +173,8 @@
         <div class="section-header" data-aos="fade-up">
             <h2>Apa Kata Mereka?</h2>
             <p>Kepuasan pelanggan adalah prioritas utama kami.</p>
-            <button class="btn btn-outline" style="margin-top: 15px;" onclick="openReviewModal()">Berikan Ulasan <i class="fas fa-pencil-alt" style="margin-left: 5px;"></i></button>
+            <button class="btn btn-outline" style="margin-top: 15px;" onclick="openReviewModal()">Berikan Ulasan <i
+                    class="fas fa-pencil-alt" style="margin-left: 5px;"></i></button>
         </div>
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
@@ -448,6 +451,50 @@
             <p>Terima kasih telah mempercayai AC-SEJUK. Teknisi kami akan segera menghubungi Anda dalam waktu singkat.
             </p>
             <button onclick="closeSuccess()" class="btn btn-primary">Tutup</button>
+        </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div id="review-modal" class="success-overlay"
+        style="display: none; align-items: center; justify-content: center; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000;">
+        <div class="success-card glass" style="width: 90%; max-width: 500px; padding: 30px; position: relative;">
+            <button onclick="closeReviewModal()"
+                style="position: absolute; top: 15px; right: 20px; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; transition: color 0.3s;"
+                onmouseover="this.style.color='#00f2ff'" onmouseout="this.style.color='#fff'"><i
+                    class="fas fa-times"></i></button>
+            <h2 style="margin-bottom: 20px; font-size: 1.8rem; text-align: center;">Berikan Ulasan Anda</h2>
+            <form id="review-form">
+                <div class="form-group" style="text-align: left; margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 5px; color: var(--text-dim); font-size: 0.9rem;">Nomor Transaksi / No. HP saat Booking</label>
+                    <input type="text" name="transaction_id" placeholder="Masukkan No. Transaksi atau HP Anda" required style="width: 100%; padding: 12px 15px; border-radius: 10px; border: 1px solid var(--primary); background: rgba(0, 242, 255, 0.05); color: #fff; outline: none;">
+                    <small style="color: #ff5050; font-size: 0.8rem; margin-top: 5px; display: block;">*Wajib diisi. Hanya untuk pelanggan yang telah menggunakan layanan kami.</small>
+                </div>
+                <div class="form-group" style="text-align: left; margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 5px; color: var(--text-dim); font-size: 0.9rem;">Nama Anda</label>
+                    <input type="text" name="reviewer_name" placeholder="Masukkan nama Anda" required style="width: 100%; padding: 12px 15px; border-radius: 10px; border: 1px solid var(--primary); background: rgba(0, 242, 255, 0.05); color: #fff; outline: none;">
+                </div>
+                <div class="form-group" style="text-align: left; margin-bottom: 15px;">
+                    <label
+                        style="display: block; margin-bottom: 5px; color: var(--text-dim); font-size: 0.9rem;">Penilaian
+                        Anda</label>
+                    <select name="rating" required
+                        style="width: 100%; padding: 12px 15px; border-radius: 10px; border: 1px solid var(--primary); background: rgba(0, 242, 255, 0.05); color: #fff; outline: none; appearance: none;">
+                        <option value="Sangat Puas" style="color: #000;">⭐⭐⭐⭐⭐ Sangat Puas</option>
+                        <option value="Puas" style="color: #000;">⭐⭐⭐⭐ Puas</option>
+                        <option value="Cukup" style="color: #000;">⭐⭐⭐ Cukup</option>
+                        <option value="Kurang" style="color: #000;">⭐⭐ Kurang</option>
+                        <option value="Sangat Kurang" style="color: #000;">⭐ Sangat Kurang</option>
+                    </select>
+                </div>
+                <div class="form-group" style="text-align: left; margin-bottom: 20px;">
+                    <label
+                        style="display: block; margin-bottom: 5px; color: var(--text-dim); font-size: 0.9rem;">Ulasan</label>
+                    <textarea name="review_text" rows="4"
+                        placeholder="Ceritakan pengalaman Anda menggunakan jasa kami..." required
+                        style="width: 100%; padding: 12px 15px; border-radius: 10px; border: 1px solid var(--primary); background: rgba(0, 242, 255, 0.05); color: #fff; outline: none; resize: none;"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Kirim Ulasan</button>
+            </form>
         </div>
     </div>
 
