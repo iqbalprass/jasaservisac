@@ -260,6 +260,18 @@ function closeSuccess() {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
+
+        // Jika tombol memiliki data-paket, isi field paket di form booking
+        const paketName = this.getAttribute('data-paket');
+        if (paketName) {
+            const paketInput = document.getElementById('booking-paket');
+            const paketGroup = document.getElementById('paket-group');
+            if (paketInput && paketGroup) {
+                paketInput.value = paketName;
+                paketGroup.style.display = 'block';
+            }
+        }
+
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
