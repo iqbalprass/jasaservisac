@@ -766,22 +766,63 @@ nav.scrolled {
 
     .pricing-card,
     .testimonial-card,
-    .service-card,
-    .booking-form {
+    .service-card {
         padding: 25px 15px !important;
+    }
+
+    /* Booking section pas 1 layar HP */
+    .booking {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+
+    .booking-info h2 {
+        font-size: 1.5rem !important;
+        margin-bottom: 5px !important;
+    }
+
+    .booking-info p {
+        font-size: 0.85rem !important;
+        margin-bottom: 10px !important;
+    }
+
+    .booking-form {
+        padding: 20px 15px !important;
+    }
+
+    .booking-form .form-group {
+        margin-bottom: 12px !important;
+    }
+
+    .booking-form .form-group label {
+        font-size: 0.8rem !important;
+        margin-bottom: 5px !important;
+    }
+
+    .booking-form .form-group input,
+    .booking-form .form-group select,
+    .booking-form .form-group textarea {
+        padding: 10px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .booking-form textarea {
+        rows: 2 !important;
     }
 
     .gallerySwiper {
         max-width: 100% !important;
         width: 100% !important;
+        margin-top: 15px !important;
+        margin-bottom: 10px !important;
     }
 
     .gallery-img {
         width: 100% !important;
-        height: 220px !important;
+        height: 180px !important;
         aspect-ratio: auto !important;
-        object-fit: cover !important;
-        background-color: transparent !important;
+        object-fit: contain !important;
+        background-color: #111 !important;
         border-radius: 10px;
     }
 
