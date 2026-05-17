@@ -256,6 +256,16 @@ function closeSuccess() {
     }, 400);
 }
 
+// Fungsi Pembatalan Paket
+function batalPaket() {
+    const paketInput = document.getElementById('booking-paket');
+    const paketGroup = document.getElementById('paket-group');
+    if (paketInput && paketGroup) {
+        paketInput.value = '';
+        paketGroup.style.display = 'none';
+    }
+}
+
 // Smooth Scroll for Navigation
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
