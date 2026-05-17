@@ -770,20 +770,45 @@ nav.scrolled {
         padding: 25px 15px !important;
     }
 
-    /* Booking section pas 1 layar HP */
+    /* ===== Booking Section pas di tengah layar HP ===== */
     .booking {
-        padding-top: 40px !important;
-        padding-bottom: 40px !important;
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+        display: flex !important;
+        align-items: center !important;
+        min-height: 100vh !important;
+    }
+
+    .booking-container {
+        gap: 20px !important;
+        width: 100% !important;
+    }
+
+    .booking-info {
+        text-align: center !important;
     }
 
     .booking-info h2 {
-        font-size: 1.5rem !important;
+        font-size: 1.4rem !important;
         margin-bottom: 5px !important;
     }
 
     .booking-info p {
         font-size: 0.85rem !important;
-        margin-bottom: 10px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .gallerySwiper {
+        max-width: 280px !important;
+        width: 100% !important;
+        margin: 10px auto 10px !important;
+    }
+
+    .gallery-img {
+        width: 100% !important;
+        height: 180px !important;
+        object-fit: cover !important;
+        border-radius: 10px;
     }
 
     .booking-form {
@@ -796,7 +821,7 @@ nav.scrolled {
 
     .booking-form .form-group label {
         font-size: 0.8rem !important;
-        margin-bottom: 5px !important;
+        margin-bottom: 4px !important;
     }
 
     .booking-form .form-group input,
@@ -804,26 +829,6 @@ nav.scrolled {
     .booking-form .form-group textarea {
         padding: 10px !important;
         font-size: 0.85rem !important;
-    }
-
-    .booking-form textarea {
-        rows: 2 !important;
-    }
-
-    .gallerySwiper {
-        max-width: 100% !important;
-        width: 100% !important;
-        margin-top: 15px !important;
-        margin-bottom: 10px !important;
-    }
-
-    .gallery-img {
-        width: 100% !important;
-        height: 180px !important;
-        aspect-ratio: auto !important;
-        object-fit: contain !important;
-        background-color: #111 !important;
-        border-radius: 10px;
     }
 
     /* Tombol Pesan dan Konsultasi disejajarkan kiri-kanan */
