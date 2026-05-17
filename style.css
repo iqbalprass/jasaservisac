@@ -24,10 +24,14 @@ body {
     color: var(--text-main);
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
-    cursor: none; /* Custom cursor will be implemented in JS */
+    cursor: none;
+    /* Custom cursor will be implemented in JS */
 }
 
-h1, h2, h3, .logo {
+h1,
+h2,
+h3,
+.logo {
     font-family: 'Poppins', sans-serif;
 }
 
@@ -35,9 +39,11 @@ h1, h2, h3, .logo {
 ::-webkit-scrollbar {
     width: 8px;
 }
+
 ::-webkit-scrollbar-track {
     background: var(--bg-dark);
 }
+
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(to bottom, var(--secondary), var(--primary));
     border-radius: 10px;
@@ -71,9 +77,20 @@ h1, h2, h3, .logo {
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); opacity: 0.8; }
-    50% { transform: scale(1.1); opacity: 1; }
-    100% { transform: scale(1); opacity: 0.8; }
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
 }
 
 /* Custom Cursor */
@@ -83,12 +100,15 @@ h1, h2, h3, .logo {
     background-color: var(--primary);
     box-shadow: 0 0 10px var(--primary);
 }
+
 .cursor-outline {
     width: 40px;
     height: 40px;
     border: 2px solid var(--primary-glow);
 }
-.cursor-dot, .cursor-outline {
+
+.cursor-dot,
+.cursor-outline {
     position: fixed;
     top: 0;
     left: 0;
@@ -252,14 +272,21 @@ nav.scrolled {
     right: 2%;
     top: 55%;
     transform: translateY(-50%);
-    width: 40%;
+    width: 25%;
     z-index: 2;
     animation: float 6s ease-in-out infinite;
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(-50%) translateX(0); }
-    50% { transform: translateY(-55%) translateX(10px); }
+
+    0%,
+    100% {
+        transform: translateY(-50%) translateX(0);
+    }
+
+    50% {
+        transform: translateY(-55%) translateX(10px);
+    }
 }
 
 .hero-img img {
@@ -439,7 +466,7 @@ nav.scrolled {
 /* Booking Form & Gallery Images */
 .gallery-img {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 16 / 9;
     height: auto;
     object-fit: cover;
     display: block;
@@ -471,7 +498,9 @@ nav.scrolled {
     color: var(--text-dim);
 }
 
-.form-group input, .form-group select, .form-group textarea {
+.form-group input,
+.form-group select,
+.form-group textarea {
     width: 100%;
     padding: 15px;
     background: rgba(255, 255, 255, 0.08);
@@ -488,11 +517,14 @@ nav.scrolled {
     color: #ffffff;
 }
 
-.form-group input::placeholder, .form-group textarea::placeholder {
+.form-group input::placeholder,
+.form-group textarea::placeholder {
     color: rgba(255, 255, 255, 0.3);
 }
 
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
     border-color: var(--primary);
     background: rgba(255, 255, 255, 0.1);
 }
@@ -519,9 +551,17 @@ nav.scrolled {
 }
 
 @keyframes pulse-wa {
-    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
-    70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
 }
 
 /* Success Overlay */
@@ -567,9 +607,19 @@ nav.scrolled {
 }
 
 @keyframes bounceIn {
-    0% { transform: scale(0); opacity: 0; }
-    70% { transform: scale(1.1); }
-    100% { transform: scale(1); opacity: 1; }
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .success-card h2 {
@@ -588,29 +638,77 @@ nav.scrolled {
 
 /* Responsive */
 @media (max-width: 991px) {
-    nav { padding: 20px; }
-    .hero { padding-top: 100px; text-align: center; flex-direction: column; }
-    .hero-content { max-width: 100%; }
-    .hero-img { position: relative; width: 80%; right: 0; top: 0; transform: none; margin-top: 50px; }
-    .hero-btns { justify-content: center; }
-    @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-20px); }
+    nav {
+        padding: 20px;
     }
-    .booking-container { grid-template-columns: 1fr; }
+
+    .hero {
+        padding-top: 100px;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-img {
+        position: relative;
+        width: 80%;
+        right: 0;
+        top: 0;
+        transform: none;
+        margin-top: 50px;
+    }
+
+    .hero-btns {
+        justify-content: center;
+    }
+
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    .booking-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
-    .nav-links { display: none; } /* Add hamburger logic in JS/HTML */
-    
+    .nav-links {
+        display: none;
+    }
+
+    /* Add hamburger logic in JS/HTML */
+
     /* Memaksa semua tulisan berada di tengah pada HP */
-    section, footer, .hero-content, .service-card, .pricing-card, .testimonial-card {
+    section,
+    footer,
+    .hero-content,
+    .service-card,
+    .pricing-card,
+    .testimonial-card {
         text-align: center !important;
     }
-    
-    .hero-content h1 { font-size: 2.2rem !important; margin-bottom: 10px !important; }
-    .hero-content p { margin-bottom: 20px !important; font-size: 0.9rem !important; }
-    
+
+    .hero-content h1 {
+        font-size: 2.2rem !important;
+        margin-bottom: 10px !important;
+    }
+
+    .hero-content p {
+        margin-bottom: 20px !important;
+        font-size: 0.9rem !important;
+    }
+
     /* Memastikan gambar hero dan bagian awal pas 1 layar (100vh) */
     .hero {
         height: 100vh !important;
@@ -618,49 +716,72 @@ nav.scrolled {
         padding-bottom: 20px !important;
         justify-content: center !important;
     }
-    
+
     .hero-image {
         width: 100% !important;
         max-height: 40vh !important;
         margin-top: 15px !important;
     }
-    
+
     .hero-image img {
         max-width: 85% !important;
         max-height: 35vh !important;
         object-fit: contain !important;
     }
-    .section-header h2 { font-size: 2rem !important; }
-    .price, .counter-item h3, .success-card h2 { font-size: 2rem !important; }
-    
+
+    .section-header h2 {
+        font-size: 2rem !important;
+    }
+
+    .price,
+    .counter-item h3,
+    .success-card h2 {
+        font-size: 2rem !important;
+    }
+
     /* Penyesuaian Padding & Ukuran agar tidak terpotong di layar HP */
-    section, footer, .hero, .services, .advantages, .pricing, .testimonials, .booking {
+    section,
+    footer,
+    .hero,
+    .services,
+    .advantages,
+    .pricing,
+    .testimonials,
+    .booking {
         padding-left: 20px !important;
         padding-right: 20px !important;
     }
-    
-    .pricing-card, .testimonial-card, .service-card, .booking-form {
+
+    .pricing-card,
+    .testimonial-card,
+    .service-card,
+    .booking-form {
         padding: 25px 15px !important;
     }
-    
+
     .gallerySwiper {
         max-width: 100% !important;
         width: 100% !important;
     }
-    
+
     .gallery-img {
         /* Jika browser tidak mendukung aspect-ratio, fallback ke tinggi tetap */
-        height: 250px;
+        height: 200px !important;
+        aspect-ratio: 16 / 9 !important;
+        object-fit: contain !important;
+        background-color: rgba(0,0,0,0.5);
+        border-radius: 15px;
     }
-    
+
     /* Tombol Pesan dan Konsultasi disejajarkan kiri-kanan */
-    .hero-btns { 
+    .hero-btns {
         display: flex !important;
-        flex-direction: row !important; 
+        flex-direction: row !important;
         justify-content: center !important;
         width: 100% !important;
         gap: 10px !important;
     }
+
     .hero-btns .btn {
         width: 50% !important;
         text-align: center !important;
@@ -668,7 +789,7 @@ nav.scrolled {
         font-size: 0.85rem !important;
         flex: 1 !important;
     }
-    
+
     .customer-info {
         flex-direction: column;
         justify-content: center;
@@ -676,18 +797,18 @@ nav.scrolled {
         text-align: center;
         gap: 10px;
     }
-    
-    footer > div > div {
+
+    footer>div>div {
         text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    
-    footer > div > div > div {
+
+    footer>div>div>div {
         justify-content: center !important;
     }
-    
+
     /* Pengecualian agar form pemesanan tetap rapi dan mudah diisi */
     .form-group {
         text-align: left !important;
