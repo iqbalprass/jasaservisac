@@ -138,7 +138,7 @@
                     <li><i class="fas fa-check"></i> Cek Tekanan Freon</li>
                     <li><i class="fas fa-times"></i> Tanpa Garansi</li>
                 </ul>
-                <a href="#booking" class="btn btn-outline">Pilih Paket</a>
+                <a href="#booking" class="btn btn-outline" data-paket="Basic - Rp 150k/Unit">Pilih Paket</a>
             </div>
             <div class="pricing-card glass best-choice" data-aos="fade-up">
                 <div class="badge">Best Choice</div>
@@ -150,7 +150,7 @@
                     <li><i class="fas fa-check"></i> Garansi 30 Hari</li>
                     <li><i class="fas fa-check"></i> Respon Cepat 24 Jam</li>
                 </ul>
-                <a href="#booking" class="btn btn-primary">Pilih Paket</a>
+                <a href="#booking" class="btn btn-primary" data-paket="Premium - Rp 300k/Unit">Pilih Paket</a>
             </div>
             <div class="pricing-card glass" data-aos="fade-left">
                 <h3>Corporate</h3>
@@ -161,7 +161,7 @@
                     <li><i class="fas fa-check"></i> Laporan Bulanan</li>
                     <li><i class="fas fa-check"></i> Prioritas Utama</li>
                 </ul>
-                <a href="#booking" class="btn btn-outline">Hubungi Kami</a>
+                <a href="#booking" class="btn btn-outline" data-paket="Corporate - Custom">Hubungi Kami</a>
             </div>
         </div>
     </section>
@@ -357,6 +357,10 @@
             </div>
             <div class="booking-form glass" data-aos="fade-left">
                 <form id="contact-form">
+                    <div class="form-group" id="paket-group" style="display: none;">
+                        <label>Paket Dipilih</label>
+                        <input type="text" id="booking-paket" name="paket" readonly style="background: rgba(0, 242, 255, 0.1); border-color: var(--primary); color: var(--primary); font-weight: 600;">
+                    </div>
                     <div class="form-group">
                         <label>Nama Lengkap</label>
                         <input type="text" id="booking-name" name="name" placeholder="Masukkan nama Anda" required>
