@@ -173,10 +173,29 @@
         <div class="section-header" data-aos="fade-up">
             <h2>Apa Kata Mereka?</h2>
             <p>Kepuasan pelanggan adalah prioritas utama kami.</p>
-            <button id="btn-berikan-ulasan" class="btn btn-outline" style="display: none; margin-top: 15px;" onclick="openReviewModal()">Berikan Ulasan <i class="fas fa-pencil-alt" style="margin-left: 5px;"></i></button>
+            <button id="btn-berikan-ulasan" class="btn btn-outline" style="display: none; margin-top: 15px;"
+                onclick="openReviewModal()">Berikan Ulasan <i class="fas fa-pencil-alt"
+                    style="margin-left: 5px;"></i></button>
         </div>
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="testimonial-card glass">
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p>"sangat baik, pengerjaan rapi dan respon cepat"</p>
+                        <div class="customer-info">
+                            <div class="customer-img" style="background-color: var(--primary); display:flex; justify-content:center; align-items:center; color:#000; font-weight:bold; font-size: 1.2rem;">
+                                M
+                            </div>
+                            <div>
+                                <h4>Muhammad Iqbal</h4>
+                                <p>Pelanggan AC-SEJUK</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="swiper-slide">
                     <div class="testimonial-card glass">
                         <div class="rating">
@@ -464,13 +483,18 @@
             <h2 style="margin-bottom: 20px; font-size: 1.8rem; text-align: center;">Berikan Ulasan Anda</h2>
             <form id="review-form">
                 <div class="form-group" style="text-align: left; margin-bottom: 15px;">
-                    <label style="display: block; margin-bottom: 5px; color: var(--text-dim); font-size: 0.9rem;">Nomor Transaksi / No. HP saat Booking</label>
-                    <input type="text" name="transaction_id" placeholder="Masukkan No. Transaksi atau HP Anda" required style="width: 100%; padding: 12px 15px; border-radius: 10px; border: 1px solid var(--primary); background: rgba(0, 242, 255, 0.05); color: #fff; outline: none;">
-                    <small style="color: #ff5050; font-size: 0.8rem; margin-top: 5px; display: block;">*Wajib diisi. Hanya untuk pelanggan yang telah menggunakan layanan kami.</small>
+                    <label style="display: block; margin-bottom: 5px; color: var(--text-dim); font-size: 0.9rem;">Nomor
+                        Transaksi / No. HP saat Booking</label>
+                    <input type="text" name="transaction_id" placeholder="Masukkan No. Transaksi atau HP Anda" required
+                        style="width: 100%; padding: 12px 15px; border-radius: 10px; border: 1px solid var(--primary); background: rgba(0, 242, 255, 0.05); color: #fff; outline: none;">
+                    <small style="color: #ff5050; font-size: 0.8rem; margin-top: 5px; display: block;">*Wajib diisi.
+                        Hanya untuk pelanggan yang telah menggunakan layanan kami.</small>
                 </div>
                 <div class="form-group" style="text-align: left; margin-bottom: 15px;">
-                    <label style="display: block; margin-bottom: 5px; color: var(--text-dim); font-size: 0.9rem;">Nama Anda</label>
-                    <input type="text" name="reviewer_name" placeholder="Masukkan nama Anda" required style="width: 100%; padding: 12px 15px; border-radius: 10px; border: 1px solid var(--primary); background: rgba(0, 242, 255, 0.05); color: #fff; outline: none;">
+                    <label style="display: block; margin-bottom: 5px; color: var(--text-dim); font-size: 0.9rem;">Nama
+                        Anda</label>
+                    <input type="text" name="reviewer_name" placeholder="Masukkan nama Anda" required
+                        style="width: 100%; padding: 12px 15px; border-radius: 10px; border: 1px solid var(--primary); background: rgba(0, 242, 255, 0.05); color: #fff; outline: none;">
                 </div>
                 <div class="form-group" style="text-align: left; margin-bottom: 15px;">
                     <label
