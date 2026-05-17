@@ -706,32 +706,32 @@ nav.scrolled {
     }
 
     .hero-content h1 {
-        font-size: 2.2rem !important;
+        font-size: 2.3rem !important;
         margin-bottom: 10px !important;
     }
 
     .hero-content p {
         margin-bottom: 20px !important;
-        font-size: 0.9rem !important;
+        font-size: 1rem !important;
     }
 
     /* Memastikan gambar hero dan bagian awal pas 1 layar (100vh) */
     .hero {
         height: 100vh !important;
-        padding-top: 110px !important;
+        padding-top: 90px !important;
         padding-bottom: 30px !important;
-        justify-content: space-between !important;
-        /* Menyebar jarak agar tidak kosong di bawah */
+        justify-content: center !important;
+        /* Memusatkan semua konten di tengah layar */
     }
 
     .hero-image {
         width: 100% !important;
         max-height: 45vh !important;
-        margin-top: auto !important;
-        /* Mendorong gambar ke paling bawah */
+        margin-top: 30px !important;
+        /* Memberi jarak antara teks dan gambar */
         display: flex !important;
-        align-items: flex-end !important;
-        /* Menempelkan gambar ke dasar box */
+        align-items: center !important;
+        /* Gambar berada di tengah kotak */
         justify-content: center !important;
     }
 
