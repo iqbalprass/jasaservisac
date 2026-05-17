@@ -436,7 +436,15 @@ nav.scrolled {
     margin-bottom: 20px;
 }
 
-/* Booking Form */
+/* Booking Form & Gallery Images */
+.gallery-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
 .booking {
     padding: 100px 10%;
 }
@@ -616,6 +624,12 @@ nav.scrolled {
     
     .gallerySwiper {
         max-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    .gallery-img {
+        /* Jika browser tidak mendukung aspect-ratio, fallback ke tinggi tetap */
+        height: 250px;
     }
     
     /* Tombol Pesan dan Konsultasi disejajarkan kiri-kanan */
