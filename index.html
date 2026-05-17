@@ -339,12 +339,19 @@
                 <h2>Siap Membuat Ruangan Anda Sejuk Kembali?</h2>
                 <p>Isi formulir di samping dan teknisi kami akan segera menghubungi Anda dalam waktu kurang dari 30
                     menit.</p>
-                <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 30px;">
-                    <img src="assets/foto1" alt="Pekerjaan Cuci AC" style="width: 100%; border-radius: 20px; object-fit: cover;">
-                    <div style="display: flex; gap: 15px;">
-                        <img src="assets/foto2" alt="Pekerjaan Isi Freon" style="width: calc(50% - 7.5px); border-radius: 20px; object-fit: cover; aspect-ratio: 4/3;">
-                        <img src="assets/foto3" alt="Pekerjaan Bongkar Pasang" style="width: calc(50% - 7.5px); border-radius: 20px; object-fit: cover; aspect-ratio: 4/3;">
+                <div class="swiper gallerySwiper" style="margin-top: 30px; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="assets/foto1" alt="Pekerjaan Cuci AC" style="width: 100%; height: 280px; object-fit: cover; display: block;">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/foto2" alt="Pekerjaan Isi Freon" style="width: 100%; height: 280px; object-fit: cover; display: block;">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/foto3" alt="Pekerjaan Bongkar Pasang" style="width: 100%; height: 280px; object-fit: cover; display: block;">
+                        </div>
                     </div>
+                    <div class="swiper-pagination gallery-pagination"></div>
                 </div>
             </div>
             <div class="booking-form glass" data-aos="fade-left">
