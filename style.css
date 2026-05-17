@@ -717,9 +717,9 @@ nav.scrolled {
     /* Memastikan gambar hero dan bagian awal pas 1 layar (100vh) */
     .hero {
         height: 100vh !important;
-        padding-top: 90px !important;
+        padding-top: 110px !important; /* Memberi ruang untuk navbar */
         padding-bottom: 20px !important;
-        justify-content: center !important;
+        justify-content: flex-start !important; /* Menaikkan konten ke arah atas */
     }
 
     .hero-image {
